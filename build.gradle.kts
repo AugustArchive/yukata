@@ -53,6 +53,7 @@ version = current
 
 repositories {
     mavenCentral()
+    jcenter() // required for `dokkaHtml` task
 }
 
 val publishingProps = try {
@@ -143,7 +144,7 @@ subprojects {
                     remoteLineSuffix.set("#L")
                 }
 
-                jdkVersion.set(8)
+                jdkVersion.set(11)
             }
         }
     }
@@ -206,4 +207,8 @@ subprojects {
             }
         }
     }
+}
+
+tasks.dokkaHtmlMultiModule.configure {
+    outputDirectory.set(file("${project.projectDir}/docs"))
 }
