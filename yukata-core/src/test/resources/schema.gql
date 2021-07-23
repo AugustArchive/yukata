@@ -1,0 +1,8 @@
+type Query {
+    hello: String!
+    world(text: String): String
+}
+
+type Mutation {
+    update(key: String!, value: Int): Boolean!
+}
