@@ -10,6 +10,7 @@ on:
     paths-ignore:
       - '.github/**'
       - 'assets/'
+      - 'docs/'
       - .dockerignore
       - gradle.properties
       - '**.md'
