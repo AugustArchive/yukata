@@ -35,4 +35,3 @@ class InterfaceDefinitionNode(
     directives: List<DirectiveNode>?,
     val fields: List<InputValueNode>?
 ): TypeDefinitionNode(location, name, description, directives)
-

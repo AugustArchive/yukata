@@ -37,4 +37,3 @@ class ObjectTypeDefinitionNode(
     val interfaces: List<NamedTypeNode>?,
     val fields: List<InputValueNode>?
 ): TypeDefinitionNode(location, name, description, directives)
-

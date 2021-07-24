@@ -33,4 +33,3 @@ class ScalarTypeDefinitionNode(
     description: StringValueNode?,
     directives: List<DirectiveNode>?
 ): TypeDefinitionNode(location, name, description, directives)
-
