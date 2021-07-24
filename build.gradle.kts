@@ -71,6 +71,7 @@ subprojects {
     apply(plugin = "maven-publish")
     apply(plugin = "org.jetbrains.dokka")
     apply(plugin = "com.diffplug.spotless")
+    apply(plugin = "kotlinx-serialization")
 
     repositories {
         mavenCentral()
