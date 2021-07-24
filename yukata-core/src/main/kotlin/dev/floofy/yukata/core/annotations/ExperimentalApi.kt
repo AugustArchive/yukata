@@ -27,5 +27,5 @@ package dev.floofy.yukata.core.annotations
  * meant to be used at all, but we aren't going to stop you!
  */
 @MustBeDocumented
-@RequiresOptIn
+@RequiresOptIn(message = "This property is experimental! Bewarn...", level = RequiresOptIn.Level.WARNING)
 annotation class ExperimentalApi

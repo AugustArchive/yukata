@@ -21,3 +21,53 @@
  */
 
 package dev.floofy.yukata.core.language
+
+import dev.floofy.yukata.core.language.kinds.TokenKind
+
+/**
+ * Represents a [lexical][Lexer] token.
+ */
+data class Token(
+    /**
+     * Returns the kind this [token][Token] is.
+     */
+    val kind: TokenKind,
+
+    /**
+     * The character offset which this Node begins
+     */
+    val start: Int = 0,
+
+    /**
+     * The character offset which this Node ends
+     */
+    val end: Int = 0,
+
+    /**
+     * 1-indexed line number on which this [Token] begins.
+     */
+    val line: Int = 0,
+
+    /**
+     * 1-indexed column number on which this [Token] beings.
+     */
+    val column: Int = 0,
+
+    /**
+     * Represents the interpreted value of this [Token], or `null`
+     * if this [Token] is a punctuational token.
+     */
+    val value: String? = null,
+
+    /**
+     * Tokens exists as nodes in a double-linked-list amongst all tokens,
+     * even including ignored tokens! [TokenKind.StartOfFile] will always be the first node
+     * and [TokenKind.EndOfFile] will always be the last token.
+     */
+    var prevToken: Token? = null,
+
+    /**
+     * Returns the next token in the tree, read the documentation for [Token.prevToken] for more information.
+     */
+    var nextToken: Token? = null
+)

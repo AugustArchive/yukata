@@ -21,3 +21,5 @@
  */
 
 package dev.floofy.yukata.core.language.exceptions
+
+class SchemaException: Exception("")

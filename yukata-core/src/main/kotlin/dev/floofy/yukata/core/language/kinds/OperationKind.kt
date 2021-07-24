@@ -21,3 +21,27 @@
  */
 
 package dev.floofy.yukata.core.language.kinds
+
+import kotlinx.serialization.Serializable
+
+/**
+ * Represents the operation kind
+ */
+@Serializable
+enum class OperationKind {
+    /**
+     * Operation for a QUERY operation.
+     */
+    QUERY,
+
+    /**
+     * Operation for a MUTATION operation.
+     */
+    MUTATION,
+
+    /**
+     * Operation for a SUBSCRIPTION operation. As of right now,
+     * subscriptions aren't supported in yukata.
+     */
+    SUBSCRIPTION
+}

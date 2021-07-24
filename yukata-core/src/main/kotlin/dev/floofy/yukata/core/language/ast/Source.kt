@@ -21,3 +21,12 @@
  */
 
 package dev.floofy.yukata.core.language.ast
+
+/**
+ * Represents the source of an [ASTNode][AstNode].
+ */
+class Source(
+    val body: String,
+    val name: String = "GraphQL Request",
+    val location: Location = Location.Empty
+)

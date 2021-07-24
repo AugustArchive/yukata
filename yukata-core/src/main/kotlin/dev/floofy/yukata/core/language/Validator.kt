@@ -21,3 +21,8 @@
  */
 
 package dev.floofy.yukata.core.language
+
+/**
+ * Class to validate the source into an assortment of success or failures.
+ */
+class Validator

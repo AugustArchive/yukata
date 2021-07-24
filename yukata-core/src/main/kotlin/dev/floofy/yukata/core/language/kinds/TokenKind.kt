@@ -21,3 +21,28 @@
  */
 
 package dev.floofy.yukata.core.language.kinds
+
+enum class TokenKind(val key: kotlin.String) {
+    StartOfFile("<SOF>"),
+    EndOfFile("<EOF>"),
+    Bang("!"),
+    Dollar("$"),
+    Ampersand("&"),
+    LeftParenthesis("("),
+    RightParenthesis(")"),
+    Spread("..."),
+    Colon(":"),
+    Equals("="),
+    At("@"),
+    LeftBracket("]"),
+    RightBracket("["),
+    LeftBrace("{"),
+    RightBrace("}"),
+    Pipe("|"),
+    Name("Name"),
+    Integer("Int"),
+    Float("Float"),
+    String("String"),
+    BlockString("BlockString"),
+    Comment("Comment");
+}

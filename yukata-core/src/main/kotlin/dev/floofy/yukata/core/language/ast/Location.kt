@@ -21,3 +21,28 @@
  */
 
 package dev.floofy.yukata.core.language.ast
+
+import kotlinx.serialization.Serializable
+
+/**
+ * Represents the location of a specific [node][AstNode].
+ */
+@Serializable
+data class Location(
+    /**
+     * The line of which this [node][AstNode] lives in.
+     */
+    val line: Int,
+
+    /**
+     * The column of which this [node][AstNode] lives in.
+     */
+    val column: Int
+) {
+    companion object {
+        /**
+         * Represents a empty [Location] object.
+         */
+        val Empty: Location = Location(1, 1)
+    }
+}

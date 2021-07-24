@@ -21,3 +21,7 @@
  */
 
 package dev.floofy.yukata.core.language.ast
+
+abstract class AstNode {
+    abstract val location: Location?
+}

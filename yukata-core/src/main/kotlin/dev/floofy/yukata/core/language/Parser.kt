@@ -21,3 +21,8 @@
  */
 
 package dev.floofy.yukata.core.language
+
+/**
+ * Represents the parser for translating [lexical][Lexer] [tokens][Token].
+ */
+class Parser

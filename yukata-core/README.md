@@ -3,11 +3,16 @@
 
 ## Usage
 ```kotlin
+class MyResolver: AbstractResolver("Something") {
+    @Query
+    @Description(text = "returns `hello world`!")
+    fun something(): String = "hello world!"
+}
+
 fun main(args: Array<String>) {
     val schema = Schema {
         resolvers += listOf(
-            MyResolver(),
-            AnotherResolver()
+            MyResolver()
         )
     }
     
