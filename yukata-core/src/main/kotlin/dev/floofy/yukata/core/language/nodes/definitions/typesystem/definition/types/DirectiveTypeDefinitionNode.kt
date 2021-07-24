@@ -20,11 +20,19 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.values
+package dev.floofy.yukata.core.language.nodes.definitions.typesystem.definition.types
 
 import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.InputValueNode
+import dev.floofy.yukata.core.language.nodes.NameNode
+import dev.floofy.yukata.core.language.nodes.definitions.typesystem.definition.DefinitionTypeSystemNode
+import dev.floofy.yukata.core.language.nodes.values.StringValueNode
 
-/**
- * Represents a value node as a [String].
- */
-class StringValueNode(val value: String, loc: Location?): ValueNode(loc)
+class DirectiveTypeDefinitionNode(
+    val description: StringValueNode?,
+    val name: NameNode,
+    val arguments: List<InputValueNode> = listOf(),
+    val repeatable: Boolean,
+    val locations: List<NameNode>,
+    location: Location?
+): DefinitionTypeSystemNode(location)

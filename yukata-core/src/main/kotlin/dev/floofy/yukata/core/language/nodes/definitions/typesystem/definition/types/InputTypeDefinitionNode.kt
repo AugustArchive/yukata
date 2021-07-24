@@ -20,4 +20,18 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.definitions
+package dev.floofy.yukata.core.language.nodes.definitions.typesystem.definition.types
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.InputValueNode
+import dev.floofy.yukata.core.language.nodes.NameNode
+import dev.floofy.yukata.core.language.nodes.values.StringValueNode
+
+class InputTypeDefinitionNode(
+    location: Location?,
+    name: NameNode,
+    description: StringValueNode?,
+    directives: List<DirectiveNode>?,
+    val fields: List<InputValueNode>?
+): TypeDefinitionNode(location, name, description, directives)

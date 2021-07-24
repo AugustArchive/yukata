@@ -21,3 +21,16 @@
  */
 
 package dev.floofy.yukata.core.language.nodes
+
+import dev.floofy.yukata.core.language.ast.AstNode
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.values.ValueNode
+
+/**
+ * Represents an argument as a [ast node][AstNode].
+ */
+data class ArgumentNode(
+    override val location: Location?,
+    val name: NameNode,
+    val value: ValueNode
+): AstNode()

@@ -20,11 +20,14 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.values
+package dev.floofy.yukata.core.language.nodes.selection
 
-import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
 
-/**
- * Represents a value node as a [String].
- */
-class StringValueNode(val value: String, loc: Location?): ValueNode(loc)
+sealed class SelectionFragmentNode(
+    parent: SelectionNode?,
+    val directives: List<DirectiveNode>?
+): SelectionNode(parent) {
+    override val fullPath: String
+        get() = parent?.fullPath?.let { "$it." } ?: ""
+}

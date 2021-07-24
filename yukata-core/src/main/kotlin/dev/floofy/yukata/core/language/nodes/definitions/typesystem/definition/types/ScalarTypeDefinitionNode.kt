@@ -20,11 +20,17 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.values
+package dev.floofy.yukata.core.language.nodes.definitions.typesystem.definition.types
 
 import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.NameNode
+import dev.floofy.yukata.core.language.nodes.values.StringValueNode
 
-/**
- * Represents a value node as a [String].
- */
-class StringValueNode(val value: String, loc: Location?): ValueNode(loc)
+class ScalarTypeDefinitionNode(
+    location: Location?,
+    name: NameNode,
+    description: StringValueNode?,
+    directives: List<DirectiveNode>?
+): TypeDefinitionNode(location, name, description, directives)
+

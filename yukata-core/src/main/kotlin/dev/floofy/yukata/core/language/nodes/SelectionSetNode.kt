@@ -21,3 +21,12 @@
  */
 
 package dev.floofy.yukata.core.language.nodes
+
+import dev.floofy.yukata.core.language.ast.AstNode
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.selection.SelectionNode
+
+data class SelectionSetNode(
+    override val location: Location?,
+    val selectors: List<SelectionNode>
+): AstNode()

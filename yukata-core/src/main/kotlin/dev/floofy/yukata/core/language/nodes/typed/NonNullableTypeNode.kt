@@ -21,3 +21,10 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.typed
+
+import dev.floofy.yukata.core.language.ast.Location
+
+class NonNullableTypeNode(
+    location: Location?,
+    val type: TypeNode
+): TypeNode(location)

@@ -21,3 +21,10 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.values
+
+import dev.floofy.yukata.core.language.ast.Location
+
+/**
+ * Represents a value node as a [List], but in GraphQL, it's interpolated as an Array.
+ */
+class ListValueNode(val values: List<ValueNode>, loc: Location?): ValueNode(loc)

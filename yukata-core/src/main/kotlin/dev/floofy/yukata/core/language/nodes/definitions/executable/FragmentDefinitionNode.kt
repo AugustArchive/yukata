@@ -20,11 +20,18 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.values
+package dev.floofy.yukata.core.language.nodes.definitions.executable
 
 import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.NameNode
+import dev.floofy.yukata.core.language.nodes.SelectionSetNode
+import dev.floofy.yukata.core.language.nodes.typed.NamedTypeNode
 
-/**
- * Represents a value node as a [String].
- */
-class StringValueNode(val value: String, loc: Location?): ValueNode(loc)
+class FragmentDefinitionNode(
+    location: Location?,
+    name: NameNode,
+    directives: List<DirectiveNode> = listOf(),
+    selectionSetNode: SelectionSetNode,
+    val condition: NamedTypeNode
+): ExecutableDefinitionNode(location, name, emptyList(), directives, selectionSetNode)

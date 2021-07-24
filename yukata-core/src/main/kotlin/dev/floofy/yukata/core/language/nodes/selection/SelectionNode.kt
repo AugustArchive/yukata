@@ -20,4 +20,16 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.definitions
+package dev.floofy.yukata.core.language.nodes.selection
+
+import dev.floofy.yukata.core.language.ast.AstNode
+
+/**
+ * Represents a selection of a field node. This can supported
+ * inline fragments or types as nodes.
+ *
+ * @param parent The parent [selection][SelectionNode] node or `null` if none.
+ */
+sealed class SelectionNode(val parent: SelectionNode?): AstNode() {
+    abstract val fullPath: String
+}

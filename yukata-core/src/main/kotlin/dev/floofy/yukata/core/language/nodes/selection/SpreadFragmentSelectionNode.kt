@@ -20,11 +20,15 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.values
+package dev.floofy.yukata.core.language.nodes.selection
 
 import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.NameNode
 
-/**
- * Represents a value node as a [String].
- */
-class StringValueNode(val value: String, loc: Location?): ValueNode(loc)
+class SpreadFragmentSelectionNode(
+    parent: SelectionNode?,
+    override val location: Location?,
+    val name: NameNode,
+    directives: List<DirectiveNode>?
+): SelectionFragmentNode(parent, directives)

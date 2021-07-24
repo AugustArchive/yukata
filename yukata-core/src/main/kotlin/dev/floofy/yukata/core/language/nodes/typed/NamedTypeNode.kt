@@ -21,3 +21,11 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.typed
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.NameNode
+
+class NamedTypeNode(
+    location: Location?,
+    val name: NameNode
+): TypeNode(location)

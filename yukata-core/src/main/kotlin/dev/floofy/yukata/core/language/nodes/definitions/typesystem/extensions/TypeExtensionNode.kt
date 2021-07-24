@@ -20,11 +20,12 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.values
+package dev.floofy.yukata.core.language.nodes.definitions.typesystem.extensions
 
 import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.definitions.DefinitionNode
 
 /**
- * Represents a value node as a [String].
+ * [TypeExtensionNode] is not supported as of this version of **yukata**.
  */
-class StringValueNode(val value: String, loc: Location?): ValueNode(loc)
+class TypeExtensionNode(location: Location?): DefinitionNode(location)

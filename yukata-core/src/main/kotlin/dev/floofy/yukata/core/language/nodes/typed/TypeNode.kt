@@ -21,3 +21,10 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.typed
+
+import dev.floofy.yukata.core.language.ast.AstNode
+import dev.floofy.yukata.core.language.ast.Location
+
+sealed class TypeNode(
+    override val location: Location?
+): AstNode()

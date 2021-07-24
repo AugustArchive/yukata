@@ -21,3 +21,10 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.values
+
+import dev.floofy.yukata.core.language.ast.Location
+
+/**
+ * Represents a value node as a [Int].
+ */
+class IntValueNode(val value: Int, loc: Location?): ValueNode(loc)

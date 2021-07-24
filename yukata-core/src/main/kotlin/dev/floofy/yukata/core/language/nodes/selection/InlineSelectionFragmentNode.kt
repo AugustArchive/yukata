@@ -20,4 +20,31 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.definitions
+package dev.floofy.yukata.core.language.nodes.selection
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.SelectionSetNode
+import dev.floofy.yukata.core.language.nodes.typed.NamedTypeNode
+
+class InlineSelectionFragmentNode(
+    parent: SelectionNode?,
+    val condition: NamedTypeNode?,
+    directives: List<DirectiveNode>?
+): SelectionFragmentNode(parent, directives) {
+    private var _selectionSet: SelectionSetNode? = null
+    private var _loc: Location? = null
+
+    override val location: Location?
+        get() = _loc
+
+    val selectionSet: SelectionSetNode?
+        get() = _selectionSet
+
+    internal fun finalize(set: SelectionSetNode?, loc: Location?): InlineSelectionFragmentNode {
+        _selectionSet = set
+        _loc = loc
+
+        return this
+    }
+}

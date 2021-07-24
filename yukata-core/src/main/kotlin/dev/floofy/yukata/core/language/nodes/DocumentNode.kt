@@ -21,3 +21,15 @@
  */
 
 package dev.floofy.yukata.core.language.nodes
+
+import dev.floofy.yukata.core.language.ast.AstNode
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.definitions.DefinitionNode
+
+/**
+ * Represents the document throughout a GraphQL schema.
+ */
+data class DocumentNode(
+    override val location: Location?,
+    val definitions: List<DefinitionNode>
+): AstNode()

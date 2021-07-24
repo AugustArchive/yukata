@@ -21,3 +21,17 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.values
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.NameNode
+
+/**
+ * Represents a value node as a object.
+ */
+class ObjectValueNode(val fields: List<ObjectFieldNode>, loc: Location?): ValueNode(loc) {
+    class ObjectFieldNode(
+        loc: Location?,
+        val name: NameNode,
+        val value: ValueNode
+    ): ValueNode(loc)
+}

@@ -20,4 +20,37 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.definitions
+package dev.floofy.yukata.core.language.nodes.selection
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.ArgumentNode
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.NameNode
+import dev.floofy.yukata.core.language.nodes.SelectionSetNode
+
+class SelectionFieldNode(
+    parent: SelectionNode?,
+    val alias: NameNode?,
+    val name: NameNode,
+    val arguments: List<ArgumentNode>?,
+    val directives: List<DirectiveNode>?
+): SelectionNode(parent) {
+    private var _selectionSet: SelectionSetNode? = null
+    private var _loc: Location? = null
+
+    override val location: Location?
+        get() = _loc
+
+    val selectionSet: SelectionSetNode?
+        get() = _selectionSet
+
+    internal fun finalize(set: SelectionSetNode?, location: Location?): SelectionFieldNode {
+        _selectionSet = set
+        _loc = location
+
+        return this
+    }
+
+    override val fullPath: String
+        get() = (parent?.fullPath?.let { "$it." } ?: "") + (alias ?: name).value
+}

@@ -21,3 +21,8 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.values
+
+import dev.floofy.yukata.core.language.ast.AstNode
+import dev.floofy.yukata.core.language.ast.Location
+
+sealed class ValueNode(override val location: Location?): AstNode()

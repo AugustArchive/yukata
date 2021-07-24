@@ -20,4 +20,19 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes.definitions
+package dev.floofy.yukata.core.language.nodes.definitions.executable
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.NameNode
+import dev.floofy.yukata.core.language.nodes.SelectionSetNode
+import dev.floofy.yukata.core.language.nodes.definitions.DefinitionNode
+import dev.floofy.yukata.core.language.nodes.definitions.typesystem.definition.VariableDefintionNode
+
+sealed class ExecutableDefinitionNode(
+    location: Location?,
+    val name: NameNode?,
+    val variables: List<VariableDefintionNode>?,
+    val directives: List<DirectiveNode>?,
+    val selectionSetNode: SelectionSetNode
+): DefinitionNode(location)

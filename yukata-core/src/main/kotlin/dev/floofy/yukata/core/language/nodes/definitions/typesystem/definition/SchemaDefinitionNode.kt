@@ -20,4 +20,14 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.language.nodes
+package dev.floofy.yukata.core.language.nodes.definitions.typesystem.definition
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.DirectiveNode
+import dev.floofy.yukata.core.language.nodes.definitions.executable.OperationDefinitionNode
+
+class SchemaDefinitionNode(
+    location: Location?,
+    val directives: List<DirectiveNode>?,
+    val operationTypes: List<OperationDefinitionNode>?
+): DefinitionTypeSystemNode(location)

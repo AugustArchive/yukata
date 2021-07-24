@@ -21,3 +21,11 @@
  */
 
 package dev.floofy.yukata.core.language.nodes.values
+
+import dev.floofy.yukata.core.language.ast.Location
+import dev.floofy.yukata.core.language.nodes.NameNode
+
+/**
+ * Represents a value node as a variable
+ */
+class VariableValueNode(val name: NameNode, loc: Location?): ValueNode(loc)
