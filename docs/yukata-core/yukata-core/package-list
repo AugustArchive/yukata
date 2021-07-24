@@ -1,7 +1,59 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:dev.floofy.yukata.core.annotations////PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/Description///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-description/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/Description/Description/#kotlin.String/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-description/-description.html
+$dokka.location:dev.floofy.yukata.core.annotations/Description/text/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-description/text.html
+$dokka.location:dev.floofy.yukata.core.annotations/Enumeration///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-enumeration/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/Enumeration/Enumeration/#kotlin.String/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-enumeration/-enumeration.html
+$dokka.location:dev.floofy.yukata.core.annotations/Enumeration/name/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-enumeration/name.html
+$dokka.location:dev.floofy.yukata.core.annotations/ExperimentalApi///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-experimental-api/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/ExperimentalApi/ExperimentalApi/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-experimental-api/-experimental-api.html
+$dokka.location:dev.floofy.yukata.core.annotations/InputType///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-input-type/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/InputType/InputType/#kotlin.String/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-input-type/-input-type.html
+$dokka.location:dev.floofy.yukata.core.annotations/InputType/name/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-input-type/name.html
+$dokka.location:dev.floofy.yukata.core.annotations/Mutation///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-mutation/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/Mutation/Mutation/#kotlin.String/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-mutation/-mutation.html
+$dokka.location:dev.floofy.yukata.core.annotations/Mutation/name/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-mutation/name.html
+$dokka.location:dev.floofy.yukata.core.annotations/ObjectType///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-object-type/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/ObjectType/ObjectType/#kotlin.String/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-object-type/-object-type.html
+$dokka.location:dev.floofy.yukata.core.annotations/ObjectType/name/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-object-type/name.html
+$dokka.location:dev.floofy.yukata.core.annotations/Query///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-query/index.html
+$dokka.location:dev.floofy.yukata.core.annotations/Query/Query/#kotlin.String/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-query/-query.html
+$dokka.location:dev.floofy.yukata.core.annotations/Query/name/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.annotations/-query/name.html
+$dokka.location:dev.floofy.yukata.core.impl////PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/index.html
+$dokka.location:dev.floofy.yukata.core.impl/MutationImpl///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-mutation-impl/index.html
+$dokka.location:dev.floofy.yukata.core.impl/MutationImpl/MutationImpl/#kotlin.reflect.KCallable[*]/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-mutation-impl/-mutation-impl.html
+$dokka.location:dev.floofy.yukata.core.impl/MutationImpl/deprecationReason/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-mutation-impl/deprecation-reason.html
+$dokka.location:dev.floofy.yukata.core.impl/MutationImpl/description/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-mutation-impl/description.html
+$dokka.location:dev.floofy.yukata.core.impl/MutationImpl/isDeprecated/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-mutation-impl/is-deprecated.html
+$dokka.location:dev.floofy.yukata.core.impl/MutationImpl/parameters/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-mutation-impl/parameters.html
+$dokka.location:dev.floofy.yukata.core.impl/MutationImpl/returnType/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-mutation-impl/return-type.html
+$dokka.location:dev.floofy.yukata.core.impl/QueryImpl///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-query-impl/index.html
+$dokka.location:dev.floofy.yukata.core.impl/QueryImpl/QueryImpl/#kotlin.reflect.KCallable[*]/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-query-impl/-query-impl.html
+$dokka.location:dev.floofy.yukata.core.impl/QueryImpl/deprecationReason/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-query-impl/deprecation-reason.html
+$dokka.location:dev.floofy.yukata.core.impl/QueryImpl/description/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-query-impl/description.html
+$dokka.location:dev.floofy.yukata.core.impl/QueryImpl/isDeprecated/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-query-impl/is-deprecated.html
+$dokka.location:dev.floofy.yukata.core.impl/QueryImpl/parameters/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-query-impl/parameters.html
+$dokka.location:dev.floofy.yukata.core.impl/QueryImpl/returnType/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.impl/-query-impl/return-type.html
+$dokka.location:dev.floofy.yukata.core.language.scalars////PointingToDeclaration/yukata-core/dev.floofy.yukata.core.language.scalars/index.html
+$dokka.location:dev.floofy.yukata.core.language.scalars/ScalarValue///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.language.scalars/-scalar-value/index.html
+$dokka.location:dev.floofy.yukata.core.language.scalars/ScalarValue/ScalarValue/#kotlin.String/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.language.scalars/-scalar-value/-scalar-value.html
+$dokka.location:dev.floofy.yukata.core.language.scalars/ScalarValue/deserialize/#kotlin.Any/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.language.scalars/-scalar-value/deserialize.html
+$dokka.location:dev.floofy.yukata.core.language.scalars/ScalarValue/name/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.language.scalars/-scalar-value/name.html
+$dokka.location:dev.floofy.yukata.core.language.scalars/ScalarValue/serialize/#kotlin.Any/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.language.scalars/-scalar-value/serialize.html
+$dokka.location:dev.floofy.yukata.core.resolvers////PointingToDeclaration/yukata-core/dev.floofy.yukata.core.resolvers/index.html
+$dokka.location:dev.floofy.yukata.core.resolvers/AbstractResolver///PointingToDeclaration/yukata-core/dev.floofy.yukata.core.resolvers/-abstract-resolver/index.html
+$dokka.location:dev.floofy.yukata.core.resolvers/AbstractResolver/AbstractResolver/#kotlin.String?/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.resolvers/-abstract-resolver/-abstract-resolver.html
+$dokka.location:dev.floofy.yukata.core.resolvers/AbstractResolver/mutations/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.resolvers/-abstract-resolver/mutations.html
+$dokka.location:dev.floofy.yukata.core.resolvers/AbstractResolver/name/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.resolvers/-abstract-resolver/name.html
+$dokka.location:dev.floofy.yukata.core.resolvers/AbstractResolver/queries/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core.resolvers/-abstract-resolver/queries.html
 $dokka.location:dev.floofy.yukata.core////PointingToDeclaration/yukata-core/dev.floofy.yukata.core/index.html
 $dokka.location:dev.floofy.yukata.core/Schema///PointingToDeclaration/yukata-core/dev.floofy.yukata.core/-schema/index.html
 $dokka.location:dev.floofy.yukata.core/Schema/Schema/#/PointingToDeclaration/yukata-core/dev.floofy.yukata.core/-schema/-schema.html
 dev.floofy.yukata.core
+dev.floofy.yukata.core.annotations
+dev.floofy.yukata.core.impl
+dev.floofy.yukata.core.language.scalars
+dev.floofy.yukata.core.resolvers
 
