@@ -94,7 +94,7 @@ class Lexer(private val source: Source) {
 
                     token = next
                 }
-            } while(token.kind == TokenKind.EndOfFile)
+            } while (token.kind == TokenKind.EndOfFile)
         }
 
         return token
