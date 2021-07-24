@@ -20,17 +20,14 @@
  * SOFTWARE.
  */
 
-package dev.floofy.yukata.core.annotations
+package dev.floofy.yukata.core.language.scalars
 
 /**
- * Marks this function as a [Mutation] within the GraphQL schema.
+ * Represents a class to create your own scalar and validate it
+ * @param T The type that is serializable
+ * @param name The name of the scalar, must be uppercase.
  */
-@Target(AnnotationTarget.FUNCTION)
-annotation class Mutation(
-    /**
-     * The name of the mutation to set. By default, it'll use
-     * the callable's name (cannot contain backticks or it'll error) with
-     * `Mutation` / `mutation` omitted.
-     */
-    val name: String = ""
-)
+abstract class ScalarValue<T>(val name: String) {
+    abstract fun deserialize(value: Any): T?
+    abstract fun serialize(value: Any): T
+}

@@ -1,16 +1,57 @@
+/**
+ * Copyright (c) 2021 Noel 🌺
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package dev.floofy.yukata.core.resolvers
 
-import kotlin.reflect.KCallable
+import dev.floofy.yukata.core.annotations.Mutation
+import dev.floofy.yukata.core.annotations.Query
+import dev.floofy.yukata.core.impl.MutationImpl
+import dev.floofy.yukata.core.impl.QueryImpl
 import kotlin.reflect.full.hasAnnotation
 
 /**
- * Represents a resolver to implement for any [Queries][dev.floofy.yukata.core.impl.Query],
- * [Mutations][dev.floofy.yukata.core.impl.Mutation], and [Subscriptions][dev.floofy.yukata.core.impl.Subscription].
+ * Represents a resolver to implement for any [Queries][dev.floofy.yukata.core.impl.QueryImpl] and
+ * [Mutations][dev.floofy.yukata.core.impl.MutationImpl].
  *
- * @param name The name of this [resolver][AbstractResolver]. It'll use
+ * @param resolverName The name of this [resolver][AbstractResolver]. It'll use
  * the class name & omits `Resolver` / `resolver` from the class name.
  */
-abstract class AbstractResolver(val name: String = "") {
-    val queries: List<KCallable<*>>
-        get() = this::class.members.toList()
+abstract class AbstractResolver(private val resolverName: String? = null) {
+    /**
+     * Returns the list of mutations available in this [resolver][AbstractResolver].
+     */
+    val mutations: List<MutationImpl>
+        get() = this::class.members.filter { it.hasAnnotation<Mutation>() }.map { MutationImpl(it) }
+
+    /**
+     * Returns the list of queries available in this [resolver][AbstractResolver].
+     */
+    val queries: List<QueryImpl>
+        get() = this::class.members.filter { it.hasAnnotation<Query>() }.map { QueryImpl(it) }
+
+    /**
+     * Returns the name of this [resolver][AbstractResolver], useful for schema errors.
+     */
+    val name: String = resolverName
+        ?: this::class.qualifiedName?.replace("Resolver", "")?.replace("resolver", "")
+        ?: error("cannot be local or anonymous class.")
 }
