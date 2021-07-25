@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":yukata-core:dokkaHtmlPartial/main":[]}'
+sourceset_dependencies = '{":yukata-core:dokkaHtmlPartial/main":[],":yukata-parser:dokkaHtmlPartial/main":[]}'
