@@ -21,3 +21,50 @@
  */
 
 package yukata.language.nodes
+
+import yukata.language.SourceLocation
+import yukata.language.ast.ASTNode
+
+/**
+ * Represents a set of [selection nodes][SelectionNode].
+ */
+data class SelectionSetNode(
+    override val location: SourceLocation?,
+    val selectors: List<SelectionNode>
+): ASTNode()
+
+/**
+ * Represents a selection ast node.
+ */
+open class SelectionNode(override val location: SourceLocation?): ASTNode()
+
+/**
+ * Represents a field selection [ast node][ASTNode].
+ */
+class FieldSelectionNode(
+    location: SourceLocation?,
+    val alias: NameNode?,
+    val name: NameNode,
+    val arguments: List<ArgumentNode>?,
+    val directives: List<DirectiveNode>?,
+    val selectionSet: SelectionSetNode?
+): SelectionNode(location)
+
+/**
+ * Represents a fragment spread [ast node][ASTNode].
+ */
+class FragmentSpreadSelectionNode(
+    location: SourceLocation?,
+    val name: NameNode,
+    val directives: List<DirectiveNode>?
+): SelectionNode(location)
+
+/**
+ * Represents a inline fragment [ast node][ASTNode].
+ */
+class InlineFragmentSelectionNode(
+    location: SourceLocation?,
+    val typeCondition: NamedTypeNode?,
+    val directives: List<DirectiveNode>?,
+    val selectionSet: SelectionSetNode
+): SelectionNode(location)

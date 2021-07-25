@@ -21,3 +21,31 @@
  */
 
 package yukata.language.nodes
+
+import yukata.language.SourceLocation
+import yukata.language.ast.ASTNode
+
+/**
+ * Represents a [node][ASTNode] as a directive.
+ *
+ * Directives provide a way to describe alternate runtime execution and type validation behaviour
+ * in a GraphQL document. In some cases, you need to provide options to alter GraphQL's execution behaviour
+ * in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives
+ * provide this by describing additional information to the executor.
+ *
+ * - Directives have a [name][NameNode] along with a [list of arguments][List] which may accept values of any input type.
+ * - Directives can be used to describe additional information for types, fields, fragments, and operations.
+ *
+ * As future versions of GraphQL adopt new configurable execution capabilities, they may be exposed via directives.
+ */
+data class DirectiveNode(
+    override val location: SourceLocation?,
+    val name: NameNode,
+    val args: List<ArgumentNode>?
+): ASTNode()
+
+data class ConstDirectiveNode(
+    override val location: SourceLocation?,
+    val name: NameNode,
+    val args: List<ConstArgumentNode>?
+): ASTNode()

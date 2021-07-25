@@ -137,7 +137,7 @@ class GraphQLException(
             for (node in nodes) {
                 if (node.location != null) {
                     appendLine()
-                    append(node.location.source.print(retrieveLocationObject(node.location.source, node.location.start)))
+                    append(node.location!!.source.print(retrieveLocationObject(node.location!!.source, node.location!!.start)))
                 }
             }
         } else if (source != null && locations != null) {

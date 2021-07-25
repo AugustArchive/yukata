@@ -20,4 +20,60 @@
  * SOFTWARE.
  */
 
+@file:JvmName("ValueNodesKt")
+
 package yukata.language.nodes
+
+import yukata.language.SourceLocation
+import yukata.language.ast.ASTNode
+
+/**
+ * Represents a node of a specific value.
+ */
+sealed class ValueNode(override val location: SourceLocation?): ASTNode()
+
+/**
+ * Represents this [value node][ValueNode] as a [Double] type.
+ */
+class DoubleValueNode(location: SourceLocation?, val value: Double): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as a enumeration member type.
+ */
+class EnumValueNode(location: SourceLocation?, val value: String): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as a [Int] type.
+ */
+class IntValueNode(location: SourceLocation?, val value: Int): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as a [List] of [value nodes][ValueNode].
+ */
+class ArrayValueNode(location: SourceLocation?, val values: List<ValueNode>): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as `null`.
+ */
+class NullValueNode(location: SourceLocation?): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as a object.
+ */
+class ObjectValueNode(location: SourceLocation?, val members: List<ObjectMemberValueNode>): ValueNode(location) {
+    class ObjectMemberValueNode(
+        location: SourceLocation?,
+        val name: NameNode,
+        val value: ValueNode
+    ): ValueNode(location)
+}
+
+/**
+ * Represents this [value node][ValueNode] as a [String] type.
+ */
+class StringValueNode(location: SourceLocation?, val value: String): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as a variable
+ */
+class VariableValueNode(location: SourceLocation?, val name: NameNode): ValueNode(location)

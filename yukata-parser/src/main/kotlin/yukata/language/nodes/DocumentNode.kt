@@ -21,3 +21,14 @@
  */
 
 package yukata.language.nodes
+
+import yukata.language.SourceLocation
+import yukata.language.ast.ASTNode
+
+/**
+ * Represents the document throughout a GraphQL schema.
+ */
+data class DocumentNode(
+    override val location: SourceLocation?,
+    val definitions: List<DefinitionNode>
+): ASTNode()

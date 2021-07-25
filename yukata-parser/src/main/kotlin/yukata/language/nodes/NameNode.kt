@@ -21,3 +21,36 @@
  */
 
 package yukata.language.nodes
+
+import yukata.language.SourceLocation
+import yukata.language.ast.ASTNode
+
+/**
+ * Represents a [NameNode].
+ *
+ * ```
+ * Name ::
+ *    /[_A-Za-z][_0-9A-Za-z]*\/
+ * ```
+ *
+ * GraphQL documents are full of named things:
+ *
+ * - operations
+ * - fields
+ * - arguments
+ * - types
+ * - directives
+ * - fragments
+ * - variables
+ *
+ * All names must follow the same grammatical form. Names in GraphQL are case-sensitive. That is to say name,
+ * Name, and NAME all refer to different names. Underscores are significant, which means other_name
+ * and othername are two different names.
+ *
+ * Names in GraphQL are limited to this ASCII subset of possible characters to support interoperation
+ * with as many other systems as possible.
+ */
+data class NameNode(
+    override val location: SourceLocation?,
+    val value: String
+): ASTNode()

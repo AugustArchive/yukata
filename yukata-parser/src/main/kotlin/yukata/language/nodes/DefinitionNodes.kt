@@ -20,4 +20,142 @@
  * SOFTWARE.
  */
 
+@file:JvmName("DefinitionNodesKt")
+
 package yukata.language.nodes
+
+import yukata.language.OperationKind
+import yukata.language.SourceLocation
+import yukata.language.ast.ASTNode
+
+/**
+ * Represents a [node][ASTNode] as a definition.
+ */
+sealed class DefinitionNode(override val location: SourceLocation?): ASTNode()
+
+// ~~~~~~~~~~~ Type System ~~~~~~~~~~~ \\
+
+/**
+ * Represents a [definition node][DefinitionNode] as a type-system definition node.
+ */
+sealed class TypeSystemDefinitionNode(location: SourceLocation?): DefinitionNode(location)
+
+class SchemaDefinitionNode(
+    location: SourceLocation?,
+    val directives: List<DirectiveNode>?,
+    val operationTypes: List<OperationDefinitionNode>?
+): TypeSystemDefinitionNode(location)
+
+class VariableDefinitionNode(
+    override val location: SourceLocation?,
+    val variable: VariableValueNode,
+    val type: TypeNode,
+    val defaultValue: ValueNode?,
+    val directives: List<DirectiveNode>?
+): ASTNode()
+
+class FieldDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val arguments: List<InputValueNode>?,
+    val type: TypeNode,
+    val directives: List<ConstDirectiveNode>?
+): TypeSystemDefinitionNode(location)
+
+class DirectiveTypeDefinitionNode(
+    location: SourceLocation?,
+    val name: NameNode,
+    val description: StringValueNode?,
+    val arguments: List<InputValueNode>?,
+    val repeatable: Boolean,
+    val locations: List<NameNode>
+): TypeSystemDefinitionNode(location)
+
+class EnumTypeDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val directives: List<DirectiveNode>?,
+    val values: List<EnumValueDefinitionNode>?
+): TypeSystemDefinitionNode(location)
+
+class EnumValueDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val directives: List<DirectiveNode>?
+): TypeSystemDefinitionNode(location)
+
+class InputObjectTypeDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val directives: List<DirectiveNode>?,
+    val fields: List<InputValueNode>?
+): TypeSystemDefinitionNode(location)
+
+class InterfaceTypeDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val directives: List<ConstDirectiveNode>?,
+    val interfaces: List<NamedTypeNode>?,
+    val fields: List<FieldDefinitionNode>?
+): TypeSystemDefinitionNode(location)
+
+class UnionTypeDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val directives: List<ConstDirectiveNode>?,
+    val types: List<NamedTypeNode>
+): TypeSystemDefinitionNode(location)
+
+class ScalarTypeDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val directives: List<ConstDirectiveNode>?
+): TypeSystemDefinitionNode(location)
+
+class ObjectTypeDefinitionNode(
+    location: SourceLocation?,
+    val description: StringValueNode?,
+    val name: NameNode,
+    val directives: List<ConstDirectiveNode>?,
+    val interfaces: List<NamedTypeNode>?,
+    val fields: List<FieldDefinitionNode>?
+): TypeSystemDefinitionNode(location)
+
+// ~~~~~~~~~~~ Executable ~~~~~~~~~~~ \\
+sealed class ExecutableDefinitionNode(
+    location: SourceLocation?,
+    val name: NameNode?,
+    val variables: List<VariableDefinitionNode>?,
+    val directives: List<DirectiveNode>?,
+    val selectionSet: SelectionSetNode
+)
+
+/**
+ * Represents a fragment definition
+ */
+class FragmentDefinitionNode(
+    location: SourceLocation?,
+    name: NameNode?,
+    directives: List<DirectiveNode>? = listOf(),
+    selectionSet: SelectionSetNode,
+    val condition: NamedTypeNode
+): ExecutableDefinitionNode(location, name, emptyList(), directives, selectionSet)
+
+/**
+ * Represents a operation definition
+ */
+class OperationDefinitionNode(
+    location: SourceLocation?,
+    name: NameNode?,
+    variables: List<VariableDefinitionNode>?,
+    directives: List<DirectiveNode>? = listOf(),
+    selectionSet: SelectionSetNode,
+    val operation: OperationKind
+): ExecutableDefinitionNode(location, name, variables, directives, selectionSet)

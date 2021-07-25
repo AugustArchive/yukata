@@ -20,4 +20,31 @@
  * SOFTWARE.
  */
 
+@file:JvmName("TypeSystemNodesKt")
+
 package yukata.language.nodes
+
+import yukata.language.SourceLocation
+import yukata.language.ast.ASTNode
+
+/**
+ * Represents a type-system node for lists, strings, and non-nulled types.
+ */
+sealed class TypeNode(override val location: SourceLocation?): ASTNode()
+
+/**
+ * Represents a node for a List type.
+ */
+class ListTypeNode(location: SourceLocation?, val type: TypeNode): TypeNode(location) {
+    val isNullable: Boolean = type !is NonNulledTypeNode
+}
+
+/**
+ * Represents a type-system node for a Name type.
+ */
+class NamedTypeNode(location: SourceLocation?, val name: NameNode): TypeNode(location)
+
+/**
+ * Represents a type-system node for a non-nullable object.
+ */
+class NonNulledTypeNode(location: SourceLocation?, val type: TypeNode): TypeNode(location)
