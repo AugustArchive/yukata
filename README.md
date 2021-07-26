@@ -5,21 +5,10 @@
 
 > **yukata** is never meant to be captialised, so it'll just be **yukata** if you mention it in your projects.
 
-## Usage
-```kotlin
-fun main(args: Array<String>) {
-    val schema = Schema {
-        resolvers += listOf(
-            SomeResolver(),
-            AnotherResolver()
-        )
-    }
-}
-```
-
 ## Modules
 - [yukata-ktor](./yukata-ktor) **~** Ktor plugin to implement a GraphQL endpoint.
 - [yukata-core](./yukata-core) **~** Core implementation of **yukata**.
+- [yukata-parser](./yukata-parser) **~** Language parser tool for **yukata**.
 
 ## License
 **yukata** is released under the **MIT** License, read the [LICENSE](./LICENSE) file for more information.

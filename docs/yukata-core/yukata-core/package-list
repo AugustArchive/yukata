@@ -45,6 +45,8 @@ $dokka.location:yukata.core.resolvers/AbstractResolver/queries/#/PointingToDecla
 $dokka.location:yukata.core////PointingToDeclaration/yukata-core/yukata.core/index.html
 $dokka.location:yukata.core/Schema///PointingToDeclaration/yukata-core/yukata.core/-schema/index.html
 $dokka.location:yukata.core/Schema/Schema/#/PointingToDeclaration/yukata-core/yukata.core/-schema/-schema.html
+$dokka.location:yukata.core/SchemaBuilder///PointingToDeclaration/yukata-core/yukata.core/-schema-builder/index.html
+$dokka.location:yukata.core/SchemaBuilder/SchemaBuilder/#/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/-schema-builder.html
 yukata.core
 yukata.core.annotations
 yukata.core.impl

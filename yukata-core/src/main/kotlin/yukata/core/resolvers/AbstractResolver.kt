@@ -22,15 +22,15 @@
 
 package yukata.core.resolvers
 
-import dev.floofy.yukata.core.impl.QueryImpl
 import kotlin.reflect.full.hasAnnotation
 import yukata.core.annotations.Mutation
 import yukata.core.annotations.Query
 import yukata.core.impl.MutationImpl
+import yukata.core.impl.QueryImpl
 
 /**
- * Represents a resolver to implement for any [Queries][dev.floofy.yukata.core.impl.QueryImpl] and
- * [Mutations][dev.floofy.yukata.core.impl.MutationImpl].
+ * Represents a resolver to implement for any [Queries][yukata.core.impl.QueryImpl] and
+ * [Mutations][yukata.core.impl.MutationImpl].
  *
  * @param resolverName The name of this [resolver][AbstractResolver]. It'll use
  * the class name & omits `Resolver` / `resolver` from the class name.
@@ -39,9 +39,9 @@ abstract class AbstractResolver(private val resolverName: String? = null) {
     /**
      * Returns the list of mutations available in this [resolver][AbstractResolver].
      */
-    val mutations: List<yukata.core.impl.MutationImpl>
-        get() = this::class.members.filter { it.hasAnnotation<yukata.core.annotations.Mutation>() }.map {
-            yukata.core.impl.MutationImpl(
+    val mutations: List<MutationImpl>
+        get() = this::class.members.filter { it.hasAnnotation<Mutation>() }.map {
+            MutationImpl(
                 it
             )
         }
@@ -50,7 +50,7 @@ abstract class AbstractResolver(private val resolverName: String? = null) {
      * Returns the list of queries available in this [resolver][AbstractResolver].
      */
     val queries: List<QueryImpl>
-        get() = this::class.members.filter { it.hasAnnotation<yukata.core.annotations.Query>() }.map { QueryImpl(it) }
+        get() = this::class.members.filter { it.hasAnnotation<Query>() }.map { QueryImpl(it) }
 
     /**
      * Returns the name of this [resolver][AbstractResolver], useful for schema errors.

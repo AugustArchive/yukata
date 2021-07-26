@@ -55,7 +55,7 @@ class QueryImpl(private val callable: KCallable<*>) {
      * Returns the description of this [query][QueryImpl].
      */
     val description: String?
-        get() = callable.findAnnotation<yukata.core.annotations.Description>()?.text
+        get() = callable.findAnnotation<Description>()?.text
 
     /**
      * Checks if this [query][QueryImpl] is deprecated.
