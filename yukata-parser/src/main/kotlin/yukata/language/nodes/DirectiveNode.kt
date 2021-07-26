@@ -39,13 +39,13 @@ import yukata.language.ast.ASTNode
  * As future versions of GraphQL adopt new configurable execution capabilities, they may be exposed via directives.
  */
 data class DirectiveNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val name: NameNode,
     val args: List<ArgumentNode>?
 ): ASTNode()
 
 data class ConstDirectiveNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val name: NameNode,
     val args: List<ConstArgumentNode>?
 ): ASTNode()

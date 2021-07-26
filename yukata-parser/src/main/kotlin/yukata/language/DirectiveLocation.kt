@@ -20,4 +20,20 @@
  * SOFTWARE.
  */
 
-package yukata.language.ast
+package yukata.language
+
+enum class DirectiveLocation {
+    QUERY,
+    MUTATION,
+    SUBSCRIPTION,
+    FIELD,
+    FRAGMENT_DEFINITION,
+    FRAGMENT_SPREAD,
+    INLINE_FRAGMENT;
+
+    companion object {
+        fun asString(value: String): DirectiveLocation? = value.lowercase().let { low ->
+            values().firstOrNull { it.name.lowercase() == low }
+        }
+    }
+}

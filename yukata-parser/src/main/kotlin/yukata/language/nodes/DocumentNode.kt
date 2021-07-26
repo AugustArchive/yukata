@@ -29,6 +29,6 @@ import yukata.language.ast.ASTNode
  * Represents the document throughout a GraphQL schema.
  */
 data class DocumentNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val definitions: List<DefinitionNode>
 ): ASTNode()

@@ -30,7 +30,7 @@ import yukata.language.ast.ASTNode
 /**
  * Represents a node of a specific value.
  */
-sealed class ValueNode(override val location: SourceLocation?): ASTNode()
+sealed class ValueNode(override var location: SourceLocation?): ASTNode()
 
 /**
  * Represents this [value node][ValueNode] as a [Double] type.
@@ -71,9 +71,19 @@ class ObjectValueNode(location: SourceLocation?, val members: List<ObjectMemberV
 /**
  * Represents this [value node][ValueNode] as a [String] type.
  */
-class StringValueNode(location: SourceLocation?, val value: String): ValueNode(location)
+class StringValueNode(location: SourceLocation?, val value: String, val isBlock: Boolean): ValueNode(location)
 
 /**
  * Represents this [value node][ValueNode] as a variable
  */
 class VariableValueNode(location: SourceLocation?, val name: NameNode): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as a [Boolean] type.
+ */
+class BooleanValueNode(location: SourceLocation?, val value: Boolean): ValueNode(location)
+
+/**
+ * Represents this [value node][ValueNode] as a constant value.
+ */
+class ConstValueNode(location: SourceLocation?): ValueNode(location)

@@ -56,7 +56,7 @@ val TokenKind.isPunctuatorKind: Boolean
  *
  * @param source The source object for this [lexical environment][Lexer].
  */
-class Lexer(private val source: Source) {
+class Lexer(val source: Source) {
     private val StartToken: Token = Token(
         kind = TokenKind.StartOfFile,
         start = 0,
@@ -65,8 +65,8 @@ class Lexer(private val source: Source) {
     )
 
     private var lineStart: Int = 0
-    private var lastToken: Token = StartToken
-    private var currToken: Token = StartToken
+    var lastToken: Token = StartToken
+    var currToken: Token = StartToken
     private var line: Int = 1
 
     /**

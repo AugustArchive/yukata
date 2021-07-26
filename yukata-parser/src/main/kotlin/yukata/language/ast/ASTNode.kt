@@ -32,5 +32,5 @@ abstract class ASTNode {
      * The location of this [ASTNode] lives in. This is determined by the
      * [ParserOptions.noLocation][yukata.language.Parser.Options.noLocation] variable.
      */
-    open val location: SourceLocation? = null
+    open var location: SourceLocation? = null
 }

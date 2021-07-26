@@ -31,7 +31,7 @@ import yukata.language.ast.ASTNode
 /**
  * Represents a [node][ASTNode] as a definition.
  */
-sealed class DefinitionNode(override val location: SourceLocation?): ASTNode()
+sealed class DefinitionNode(override var location: SourceLocation?): ASTNode()
 
 // ~~~~~~~~~~~ Type System ~~~~~~~~~~~ \\
 
@@ -42,16 +42,17 @@ sealed class TypeSystemDefinitionNode(location: SourceLocation?): DefinitionNode
 
 class SchemaDefinitionNode(
     location: SourceLocation?,
-    val directives: List<DirectiveNode>?,
-    val operationTypes: List<OperationDefinitionNode>?
+    val description: StringValueNode?,
+    val directives: List<ConstDirectiveNode>?,
+    val operationTypes: List<OperationTypeDefinitionNode>?
 ): TypeSystemDefinitionNode(location)
 
 class VariableDefinitionNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val variable: VariableValueNode,
     val type: TypeNode,
     val defaultValue: ValueNode?,
-    val directives: List<DirectiveNode>?
+    val directives: List<ConstDirectiveNode>?
 ): ASTNode()
 
 class FieldDefinitionNode(
@@ -76,7 +77,7 @@ class EnumTypeDefinitionNode(
     location: SourceLocation?,
     val description: StringValueNode?,
     val name: NameNode,
-    val directives: List<DirectiveNode>?,
+    val directives: List<ConstDirectiveNode>?,
     val values: List<EnumValueDefinitionNode>?
 ): TypeSystemDefinitionNode(location)
 
@@ -84,14 +85,14 @@ class EnumValueDefinitionNode(
     location: SourceLocation?,
     val description: StringValueNode?,
     val name: NameNode,
-    val directives: List<DirectiveNode>?
+    val directives: List<ConstDirectiveNode>?
 ): TypeSystemDefinitionNode(location)
 
 class InputObjectTypeDefinitionNode(
     location: SourceLocation?,
     val description: StringValueNode?,
     val name: NameNode,
-    val directives: List<DirectiveNode>?,
+    val directives: List<ConstDirectiveNode>?,
     val fields: List<InputValueNode>?
 ): TypeSystemDefinitionNode(location)
 
@@ -135,7 +136,7 @@ sealed class ExecutableDefinitionNode(
     val variables: List<VariableDefinitionNode>?,
     val directives: List<DirectiveNode>?,
     val selectionSet: SelectionSetNode
-)
+): DefinitionNode(location)
 
 /**
  * Represents a fragment definition
@@ -159,3 +160,12 @@ class OperationDefinitionNode(
     selectionSet: SelectionSetNode,
     val operation: OperationKind
 ): ExecutableDefinitionNode(location, name, variables, directives, selectionSet)
+
+/**
+ * Represents a operation type definition.
+ */
+class OperationTypeDefinitionNode(
+    override var location: SourceLocation?,
+    val operation: OperationKind,
+    val type: NamedTypeNode
+): ASTNode()

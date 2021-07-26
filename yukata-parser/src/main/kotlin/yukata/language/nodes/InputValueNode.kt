@@ -29,10 +29,10 @@ import yukata.language.ast.ASTNode
  * Represents a input value as a [ast node][ASTNode].
  */
 data class InputValueNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val name: NameNode,
     val description: StringValueNode?,
     val type: TypeNode,
     val defaultValue: ValueNode?,
-    val directives: List<DirectiveNode>?
+    val directives: List<ConstDirectiveNode>?
 ): ASTNode()

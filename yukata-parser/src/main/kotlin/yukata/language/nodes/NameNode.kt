@@ -51,6 +51,6 @@ import yukata.language.ast.ASTNode
  * with as many other systems as possible.
  */
 data class NameNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val value: String
 ): ASTNode()

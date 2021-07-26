@@ -30,7 +30,7 @@ import yukata.language.ast.ASTNode
 /**
  * Represents a type-system node for lists, strings, and non-nulled types.
  */
-sealed class TypeNode(override val location: SourceLocation?): ASTNode()
+sealed class TypeNode(override var location: SourceLocation?): ASTNode()
 
 /**
  * Represents a node for a List type.

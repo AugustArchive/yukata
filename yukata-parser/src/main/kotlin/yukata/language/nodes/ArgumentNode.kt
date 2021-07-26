@@ -29,13 +29,13 @@ import yukata.language.ast.ASTNode
  * Represents an argument as a [ast node][ASTNode].
  */
 data class ArgumentNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val name: NameNode,
     val value: ValueNode
 ): ASTNode()
 
 data class ConstArgumentNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val name: NameNode,
     val value: ValueNode
 ): ASTNode()

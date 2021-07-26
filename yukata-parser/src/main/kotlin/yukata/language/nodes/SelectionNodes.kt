@@ -29,14 +29,14 @@ import yukata.language.ast.ASTNode
  * Represents a set of [selection nodes][SelectionNode].
  */
 data class SelectionSetNode(
-    override val location: SourceLocation?,
+    override var location: SourceLocation?,
     val selectors: List<SelectionNode>
 ): ASTNode()
 
 /**
  * Represents a selection ast node.
  */
-open class SelectionNode(override val location: SourceLocation?): ASTNode()
+open class SelectionNode(override var location: SourceLocation?): ASTNode()
 
 /**
  * Represents a field selection [ast node][ASTNode].
