@@ -1,6 +1,8 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:yukata.core.annotations////PointingToDeclaration/yukata-core/yukata.core.annotations/index.html
+$dokka.location:yukata.core.annotations/Context///PointingToDeclaration/yukata-core/yukata.core.annotations/-context/index.html
+$dokka.location:yukata.core.annotations/Context/Context/#/PointingToDeclaration/yukata-core/yukata.core.annotations/-context/-context.html
 $dokka.location:yukata.core.annotations/Description///PointingToDeclaration/yukata-core/yukata.core.annotations/-description/index.html
 $dokka.location:yukata.core.annotations/Description/Description/#kotlin.String/PointingToDeclaration/yukata-core/yukata.core.annotations/-description/-description.html
 $dokka.location:yukata.core.annotations/Description/text/#/PointingToDeclaration/yukata-core/yukata.core.annotations/-description/text.html
@@ -21,6 +23,13 @@ $dokka.location:yukata.core.annotations/ObjectType/name/#/PointingToDeclaration/
 $dokka.location:yukata.core.annotations/Query///PointingToDeclaration/yukata-core/yukata.core.annotations/-query/index.html
 $dokka.location:yukata.core.annotations/Query/Query/#kotlin.String/PointingToDeclaration/yukata-core/yukata.core.annotations/-query/-query.html
 $dokka.location:yukata.core.annotations/Query/name/#/PointingToDeclaration/yukata-core/yukata.core.annotations/-query/name.html
+$dokka.location:yukata.core.context////PointingToDeclaration/yukata-core/yukata.core.context/index.html
+$dokka.location:yukata.core.context/Context///PointingToDeclaration/yukata-core/yukata.core.context/-context/index.html
+$dokka.location:yukata.core.context/Context/Context/#yukata.core.Schema/PointingToDeclaration/yukata-core/yukata.core.context/-context/-context.html
+$dokka.location:yukata.core.context/Context/schema/#/PointingToDeclaration/yukata-core/yukata.core.context/-context/schema.html
+$dokka.location:yukata.core.extensions////PointingToDeclaration/yukata-core/yukata.core.extensions/index.html
+$dokka.location:yukata.core.extensions//createInstance/kotlin.reflect.KClass[TypeParam(bounds=[kotlin.Any])]#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/yukata-core/yukata.core.extensions/create-instance.html
+$dokka.location:yukata.core.extensions//createInstance/kotlin.reflect.KClass[TypeParam(bounds=[kotlin.Any])]#kotlin.Array[kotlin.Any]/PointingToDeclaration/yukata-core/yukata.core.extensions/create-instance.html
 $dokka.location:yukata.core.impl////PointingToDeclaration/yukata-core/yukata.core.impl/index.html
 $dokka.location:yukata.core.impl/MutationImpl///PointingToDeclaration/yukata-core/yukata.core.impl/-mutation-impl/index.html
 $dokka.location:yukata.core.impl/MutationImpl/MutationImpl/#kotlin.reflect.KCallable[*]/PointingToDeclaration/yukata-core/yukata.core.impl/-mutation-impl/-mutation-impl.html
@@ -42,13 +51,43 @@ $dokka.location:yukata.core.resolvers/AbstractResolver/AbstractResolver/#kotlin.
 $dokka.location:yukata.core.resolvers/AbstractResolver/mutations/#/PointingToDeclaration/yukata-core/yukata.core.resolvers/-abstract-resolver/mutations.html
 $dokka.location:yukata.core.resolvers/AbstractResolver/name/#/PointingToDeclaration/yukata-core/yukata.core.resolvers/-abstract-resolver/name.html
 $dokka.location:yukata.core.resolvers/AbstractResolver/queries/#/PointingToDeclaration/yukata-core/yukata.core.resolvers/-abstract-resolver/queries.html
+$dokka.location:yukata.core.scalars////PointingToDeclaration/yukata-core/yukata.core.scalars/index.html
+$dokka.location:yukata.core.scalars//ScalarsModule/#kotlin.Function1[yukata.core.scalars.ScalarsModuleBuilder,kotlin.Unit]/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module.html
+$dokka.location:yukata.core.scalars/BooleanScalar///PointingToDeclaration/yukata-core/yukata.core.scalars/-boolean-scalar/index.html
+$dokka.location:yukata.core.scalars/BooleanScalar/BooleanScalar/#/PointingToDeclaration/yukata-core/yukata.core.scalars/-boolean-scalar/-boolean-scalar.html
+$dokka.location:yukata.core.scalars/BooleanScalar/serialize/#kotlin.Any/PointingToDeclaration/yukata-core/yukata.core.scalars/-boolean-scalar/serialize.html
+$dokka.location:yukata.core.scalars/ScalarSerializer///PointingToDeclaration/yukata-core/yukata.core.scalars/-scalar-serializer/index.html
+$dokka.location:yukata.core.scalars/ScalarSerializer/ScalarSerializer/#/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalar-serializer/-scalar-serializer.html
+$dokka.location:yukata.core.scalars/ScalarSerializer/serialize/#kotlin.Any/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalar-serializer/serialize.html
+$dokka.location:yukata.core.scalars/ScalarsModule///PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module/index.html
+$dokka.location:yukata.core.scalars/ScalarsModule/ScalarsModule/#/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module/-scalars-module.html
+$dokka.location:yukata.core.scalars/ScalarsModule/extend/#kotlin.Function1[yukata.core.scalars.ScalarsModuleBuilder,kotlin.Unit]/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module/extend.html
+$dokka.location:yukata.core.scalars/ScalarsModule/extend/#yukata.core.scalars.ScalarsModule/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module/extend.html
+$dokka.location:yukata.core.scalars/ScalarsModuleBuilder///PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module-builder/index.html
+$dokka.location:yukata.core.scalars/ScalarsModuleBuilder/ScalarsModuleBuilder/#/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module-builder/-scalars-module-builder.html
+$dokka.location:yukata.core.scalars/ScalarsModuleBuilder/build/#/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module-builder/build.html
+$dokka.location:yukata.core.scalars/ScalarsModuleBuilder/extend/#yukata.core.scalars.ScalarsModule/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module-builder/extend.html
+$dokka.location:yukata.core.scalars/ScalarsModuleBuilder/scalar/#/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module-builder/scalar.html
+$dokka.location:yukata.core.scalars/ScalarsModuleBuilder/scalar/#kotlin.reflect.KClass[TypeParam(bounds=[yukata.core.scalars.ScalarSerializer[*]])]/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module-builder/scalar.html
+$dokka.location:yukata.core.scalars/ScalarsModuleBuilder/scalar/#yukata.core.scalars.ScalarSerializer[*]/PointingToDeclaration/yukata-core/yukata.core.scalars/-scalars-module-builder/scalar.html
 $dokka.location:yukata.core////PointingToDeclaration/yukata-core/yukata.core/index.html
+$dokka.location:yukata.core//createSchema/#kotlin.Function1[yukata.core.SchemaBuilder,kotlin.Unit]/PointingToDeclaration/yukata-core/yukata.core/create-schema.html
 $dokka.location:yukata.core/Schema///PointingToDeclaration/yukata-core/yukata.core/-schema/index.html
 $dokka.location:yukata.core/Schema/Schema/#/PointingToDeclaration/yukata-core/yukata.core/-schema/-schema.html
 $dokka.location:yukata.core/SchemaBuilder///PointingToDeclaration/yukata-core/yukata.core/-schema-builder/index.html
 $dokka.location:yukata.core/SchemaBuilder/SchemaBuilder/#/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/-schema-builder.html
+$dokka.location:yukata.core/SchemaBuilder/build/#/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/build.html
+$dokka.location:yukata.core/SchemaBuilder/context/#yukata.core.context.Context/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/context.html
+$dokka.location:yukata.core/SchemaBuilder/inputType/#/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/input-type.html
+$dokka.location:yukata.core/SchemaBuilder/inputType/#kotlin.reflect.KClass[*]/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/input-type.html
+$dokka.location:yukata.core/SchemaBuilder/objectType/#/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/object-type.html
+$dokka.location:yukata.core/SchemaBuilder/objectType/#kotlin.reflect.KClass[*]/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/object-type.html
+$dokka.location:yukata.core/SchemaBuilder/resolver/#kotlin.reflect.KClass[yukata.core.resolvers.AbstractResolver]/PointingToDeclaration/yukata-core/yukata.core/-schema-builder/resolver.html
 yukata.core
 yukata.core.annotations
+yukata.core.context
+yukata.core.extensions
 yukata.core.impl
 yukata.core.resolvers
+yukata.core.scalars
 

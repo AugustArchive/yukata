@@ -22,4 +22,114 @@
 
 package yukata.core
 
-class SchemaBuilder
+import kotlin.contracts.ExperimentalContracts
+import kotlin.contracts.InvocationKind
+import kotlin.contracts.contract
+import kotlin.reflect.KClass
+import kotlin.reflect.full.createInstance
+import kotlin.reflect.full.hasAnnotation
+import yukata.core.annotations.InputType
+import yukata.core.annotations.ObjectType
+import yukata.core.context.Context
+import yukata.core.resolvers.AbstractResolver
+import yukata.core.scalars.ScalarsModule
+
+/**
+ * Creates a new [Schema] object.
+ * @param block The builder to construct a [Schema].
+ */
+@OptIn(ExperimentalContracts::class)
+fun createSchema(block: SchemaBuilder.() -> Unit): Schema {
+    contract {
+        callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+    }
+
+    val builder = SchemaBuilder().apply(block)
+    return builder.build()
+}
+
+/**
+ * Represents a builder class to construct [Schema]s.
+ *
+ * ## Example
+ * ```kotlin
+ * val schema = createSchema {
+ *     // Register resolvers
+ *     resolver(UserResolver)
+ *     resolver(LoginResolver)
+ *
+ *     // Register types
+ *     objectType(SomeObjectType)
+ *
+ *     // Register scalars
+ *     scalar(SomeScalar)
+ *
+ *     // ...
+ * }
+ * ```
+ */
+class SchemaBuilder {
+    private val resolvers: MutableList<AbstractResolver> = mutableListOf()
+    private var useContext: Context? = null
+    private val scalarsModule: ScalarsModule = ScalarsModule()
+
+    /**
+     * Appends a custom context into the [Schema].
+     * @param context The context object to use
+     * @return This [SchemaBuilder] for chaining methods.
+     */
+    fun context(context: Context): SchemaBuilder {
+        useContext = context
+        return this
+    }
+
+    /**
+     * Appends a resolver with mutations or queries in this [Schema].
+     * @param kClass The class object to use
+     * @return This [SchemaBuilder] for chaining methods.
+     */
+    fun resolver(kClass: KClass<AbstractResolver>): SchemaBuilder {
+        val resolver = kClass.createInstance()
+        resolvers.add(resolver)
+
+        return this
+    }
+
+    /**
+     * Adds a object type to this [Schema] but reified as T
+     * @return This [SchemaBuilder] for chaining methods.
+     */
+    inline fun <reified T> objectType(): SchemaBuilder = objectType(T::class)
+
+    /**
+     * Adds a object type to this [Schema].
+     * @param kClass The class object to use
+     * @return This [SchemaBuilder] for chaining methods.
+     */
+    fun objectType(type: KClass<*>): SchemaBuilder {
+        require(type.hasAnnotation<ObjectType>()) { "Object type ${type::class} must have the @ObjectType annotation" }
+        require(type.isData) { "Object type ${type::class} must be a data class." }
+
+        return this
+    }
+
+    /**
+     * Adds a input type to this [Schema] but reified as T.
+     * @return This [SchemaBuilder] for chaining methods
+     */
+    inline fun <reified T> inputType(): SchemaBuilder = inputType(T::class)
+
+    /**
+     * Adds a input type to this [Schema].
+     * @param type The [class][KClass] to use
+     * @return This [SchemaBuilder] for chaining methods
+     */
+    fun inputType(type: KClass<*>): SchemaBuilder {
+        require(type.hasAnnotation<InputType>()) { "Input type ${type::class} must have the @InputType annotation" }
+        require(type.isData) { "Input type ${type::class} must be a data class." }
+
+        return this
+    }
+
+    fun build(): Schema = Schema()
+}

@@ -21,3 +21,9 @@
  */
 
 package yukata.core.scalars
+
+class BooleanScalar: ScalarSerializer<Boolean>() {
+    override fun serialize(obj: Any): Boolean {
+        TODO("Not yet implemented")
+    }
+}
